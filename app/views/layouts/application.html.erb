@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Conradbastable</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
+  <title>Conrad Bastable</title>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-
+<div class="wrapper">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
 <%= yield %>
-
+<%= debug(params) if Rails.env.development? %>
+    </div>
 </body>
 </html>
