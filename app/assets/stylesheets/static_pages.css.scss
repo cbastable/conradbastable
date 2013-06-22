@@ -36,6 +36,7 @@
 		padding-bottom: 5px;
 	}
 	li {
+		width: 6em;
 		float: left;
 		overflow: hidden;
 		margin-right: 5px;
@@ -59,6 +60,10 @@
 	}
 }
 
+li .on-hover { display: none; }
+li:hover .default { display: none; }
+li:hover .on-hover { display: inline; }
+
 p {
 
 	font-size: 16px;
@@ -71,5 +76,6 @@ color: #333;
 text-decoration: none;
 	&:hover{
 		text-decoration: none;
+		color: #275FD9;
 	}
 }
