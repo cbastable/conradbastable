@@ -1,0 +1,10 @@
+<header id="header"%><%= render "header.html.erb" %></header>
+<div class="container">
+	<h1 class="post-title"><%= @post.title %></h1>
+	<% if signed_in? %>
+	 	<h2><%= link_to "Edit post", edit_blog_path(Post.find_by_permalink(params[:permalink]).permalink)%> | 
+	 	<%= button_to "Delete post", @post, class: "btn btn-primary", method: :delete,
+                data: {confirm: "Delete story?"} %></h2> 
+	<% end %>
+	<p class="post-body"><%=  h(@post.content).gsub(/\n/, '</p><p class="post-body">').html_safe %></p>
+</div>
