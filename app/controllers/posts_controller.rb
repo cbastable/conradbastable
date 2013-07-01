@@ -9,8 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create!(params[:post])
-
+    @post = User.first.posts.create!(params[:post])
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
