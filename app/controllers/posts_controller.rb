@@ -22,7 +22,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = User.first.posts.build
+    if signed_in?
+      @post = User.first.posts.build
+    else
+      redirect_to root_url
+    end
   end
 
   def edit
