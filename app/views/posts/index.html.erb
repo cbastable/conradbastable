@@ -1,4 +1,10 @@
 <header id="header"%><%= render "header.html.erb" %></header>
-<% @posts.each do |post| %>
-	<%= link_to "#{post.title}", show_post_path(post.permalink) %>
-<% end %>
+<div class="posts">
+<ul>
+	<% @posts.each do |post| %>
+		<li>
+			<%= render "show_in_index.html.erb", post: post %>
+		</li>
+	<% end %>
+</ul>
+</div>

@@ -9,5 +9,6 @@ Conradbastable::Application.routes.draw do
   match "/blog/new", to: "posts#new", as: :new_post
   match "/blog/:permalink", to: "posts#show", as: :show_post
   match "/blog/:permalink/edit", to: "posts#edit", as: :edit_blog
+  match "/about", to: "static_pages#about", as: :about
 
 end
