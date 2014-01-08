@@ -4,7 +4,7 @@
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
-  <title>Conrad Bastable</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= render 'layouts/shim' %>
 </head>
 <body>
