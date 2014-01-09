@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-     @posts = Post.all
+     @posts = Post.all.sort_by(&:created_at).reverse
 
     respond_to do |format|
       format.html # index.html.erb
